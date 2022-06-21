@@ -16,7 +16,7 @@ export class PgProviderSeederConfigService implements TypeOrmOptionsFactory {
       username: this.config.get<string>('DATABASE_USER'),
       password: this.config.get<string>('DATABASE_PASSWORD'),
       entities: ['src/api/**/*.entity.{js,ts}'],
-      migrations: ['dist/migrations/*.{ts,js}'],
+      migrations: ['src/migrations/*.{ts,js}'],
       migrationsTableName: 'typeorm_migrations',
       logger: 'file',
       synchronize: false, // never use TRUE in production!

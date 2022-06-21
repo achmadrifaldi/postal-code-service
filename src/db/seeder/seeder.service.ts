@@ -32,7 +32,7 @@ export class SeederService {
   }
 
   public async extractProvince(): Promise<any> {
-    const csvFile = readFileSync('src/seeder/csv/provinces.csv');
+    const csvFile = readFileSync('src/db/seeder/csv/provinces.csv');
     const csvData = csvFile.toString();
 
     const parsedCsv = await parse(csvData, {
@@ -55,9 +55,9 @@ export class SeederService {
   }
 
   public async extractCity(): Promise<any> {
-    const csvFile = readFileSync('src/seeder/csv/cities.csv');
+    const csvFile = readFileSync('src/db/seeder/csv/cities.csv');
     const csv2File = readFileSync(
-      'src/seeder/csv/kemendagri_code_relation_regency.csv',
+      'src/db/seeder/csv/kemendagri_code_relation_regency.csv',
     );
     const csvData = csvFile.toString();
     const csv2Data = csv2File.toString();
@@ -98,7 +98,7 @@ export class SeederService {
   }
 
   public async extractSubDistrict(): Promise<any> {
-    const csvFile = readFileSync('src/seeder/csv/subDistricts.csv');
+    const csvFile = readFileSync('src/db/seeder/csv/subDistricts.csv');
     const csvData = csvFile.toString();
 
     const parsedCsv = await parse(csvData, {
@@ -124,7 +124,7 @@ export class SeederService {
   }
 
   public async extractVillage(): Promise<any> {
-    const csvFile = readFileSync('src/seeder/csv/villages.csv');
+    const csvFile = readFileSync('src/db/seeder/csv/villages.csv');
     const csvData = csvFile.toString();
 
     const parsedCsv = await parse(csvData, {
@@ -152,7 +152,7 @@ export class SeederService {
   }
 
   public async extractPostalCode(): Promise<any> {
-    const csvFile = readFileSync('src/seeder/csv/villages.csv');
+    const csvFile = readFileSync('src/db/seeder/csv/villages.csv');
     const csvData = csvFile.toString();
 
     const parsedCsv = await parse(csvData, {
