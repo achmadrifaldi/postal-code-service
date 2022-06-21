@@ -6,7 +6,7 @@ Service to get a list of provinces, cities, districts, villages and postal codes
 
 ## Project Dependencies
 1. Node version **>= v14**
-1. PostgreSQL version **>= 14**
+2. PostgreSQL version **>= 14**
 
 
 ## Installation
