@@ -21,9 +21,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "seed": "ts-node -r tsconfig-paths/register src/db/seed.ts",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm",
-    "migration:generate": "npm run typeorm -- -d src/db/datasource.ts migration:generate",
-    "migration:run": "npm run typeorm -- -d src/db/datasource.ts migration:run",
-    "migration:show": "npm run typeorm -- -d src/db/datasource.ts migration:show"
+    "migration:generate": "npm run typeorm -- -d datasource.ts migration:generate",
+    "migration:run": "npm run typeorm -- -d datasource.ts migration:run",
+    "migration:show": "npm run typeorm -- -d datasource.ts migration:show"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
