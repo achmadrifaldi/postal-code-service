@@ -1,18 +1,13 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { IsNumber, IsNotEmpty, IsString } from 'class-validator';
 
-export class SearchDto {
+export class SearchCityDto {
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
   public province: string;
 
-  @IsString()
-  @IsNotEmpty()
-  public city: string;
-
-  @IsString()
-  @IsNotEmpty()
-  public subDistrict: string;
-
+  @ApiProperty()
   @IsString()
   public search: string;
 

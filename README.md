@@ -1,4 +1,4 @@
-# Kode Pos Service
+# Postal Code Service
 ## Description
 
 Service to get a list of provinces, cities, districts, villages and postal codes of Indonesia
@@ -62,4 +62,4 @@ $ npm run test:cov
 
 ## API Documentation
 
-[TBD]()
+API documented using swagger and can be accessed at path [/docs](http://localhost:3000/docs)

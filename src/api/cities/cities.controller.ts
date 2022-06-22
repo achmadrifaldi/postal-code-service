@@ -5,11 +5,13 @@ import {
   Body,
   UsePipes,
   ValidationPipe,
+  HttpCode,
 } from '@nestjs/common';
+import { ApiResponse } from '@nestjs/swagger';
 import { BaseResponse } from 'src/common/dto/base-response';
 import { Pagination } from 'src/common/dto/pagination';
 import { CitiesService } from './cities.service';
-import { SearchDto } from './dto';
+import { SearchCityDto } from './dto';
 import { CityResponseInterface } from './interfaces/city-response.interface';
 
 @Controller('cities')
@@ -19,7 +21,13 @@ export class CitiesController {
 
   @Post()
   @UsePipes(new ValidationPipe({ transform: true }))
-  public async getCities(@Body() body: SearchDto): Promise<BaseResponse> {
+  @HttpCode(200)
+  @ApiResponse({
+    status: 200,
+    type: BaseResponse,
+    description: 'Get list city of Indonesia.',
+  })
+  public async getCities(@Body() body: SearchCityDto): Promise<BaseResponse> {
     const result: Pagination<CityResponseInterface> =
       await this.service.findAll(body);
 

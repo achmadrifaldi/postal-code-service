@@ -1,2 +1,2 @@
-export * from './search.dto';
+export * from './search-village.dto';
 export * from './import-village.dto';

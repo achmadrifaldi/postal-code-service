@@ -6,11 +6,13 @@ import {
   Body,
   UsePipes,
   ValidationPipe,
+  HttpCode,
 } from '@nestjs/common';
+import { ApiResponse } from '@nestjs/swagger';
 import { BaseResponse } from 'src/common/dto/base-response';
 import { Pagination } from 'src/common/dto/pagination';
 import { SubDistrictsService } from './sub-districts.service';
-import { SearchDto } from './dto';
+import { SearchSubDistrictDto } from './dto';
 
 @Controller('sub-districts')
 export class SubDistrictsController {
@@ -18,8 +20,16 @@ export class SubDistrictsController {
   private readonly service: SubDistrictsService;
 
   @Post()
+  @HttpCode(200)
   @UsePipes(new ValidationPipe({ transform: true }))
-  public async getSubDistricts(@Body() body: SearchDto): Promise<BaseResponse> {
+  @ApiResponse({
+    status: 201,
+    type: BaseResponse,
+    description: 'Get list district of Indonesia.',
+  })
+  public async getSubDistricts(
+    @Body() body: SearchSubDistrictDto,
+  ): Promise<BaseResponse> {
     const result: Pagination<SubDistrictResponseInterface> =
       await this.service.findAll(body);
 

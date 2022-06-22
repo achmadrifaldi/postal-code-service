@@ -1,14 +1,16 @@
 import {
   Body,
   Controller,
+  HttpCode,
   Inject,
   Post,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
+import { ApiResponse } from '@nestjs/swagger';
 import { BaseResponse } from 'src/common/dto/base-response';
 import { Pagination } from 'src/common/dto/pagination';
-import { SearchDto } from './dto';
+import { SearchVillageDto } from './dto';
 import { VillagesService } from './villages.service';
 import { VillageResponseInterface } from './interfaces/village-response.interface';
 
@@ -18,8 +20,16 @@ export class VillagesController {
   private readonly service: VillagesService;
 
   @Post()
+  @HttpCode(200)
   @UsePipes(new ValidationPipe({ transform: true }))
-  public async getSubDistricts(@Body() body: SearchDto): Promise<BaseResponse> {
+  @ApiResponse({
+    status: 200,
+    type: BaseResponse,
+    description: 'Get list village of Indonesia.',
+  })
+  public async getSubDistricts(
+    @Body() body: SearchVillageDto,
+  ): Promise<BaseResponse> {
     const result: Pagination<VillageResponseInterface> =
       await this.service.findAll(body);
 
