@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  api:
+    container_name: 'postal_code_service_${NODE_ENV}'
+    image: 'postal_code_service_${NODE_ENV}'
+    environment:
+      - NODE_ENV:${NODE_ENV}
+    build:
+      context: .
+      target: '${NODE_ENV}'
+      dockerfile: Dockerfile
+    entrypoint: ['npm', 'run', 'start:${NODE_ENV}']
+    env_file:
+      - .env
+    ports:
+      - '${PORT}:${PORT}'
+    networks:
+      - nesjs-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - postgres
+    restart: unless-stopped
+  postgres:
+    container_name: 'db_postal_code_${NODE_ENV}'
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    networks:
+      - nesjs-network
+    ports:
+      - '${DATABASE_PORT}:${DATABASE_PORT}'
+    volumes:
+      - docker-nest-postgres:/var/lib/postgresql/data
+
+volumes:
+  docker-nest-postgres:
+
+networks:
+  nesjs-network:

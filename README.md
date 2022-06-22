@@ -46,6 +46,13 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Running the app with Docker Compose
+
+```bash
+# Make sure to change DATABASE_HOST value on .env file to postgres
+
+$ docker-compose up -d -V --build
+```
 
 ## Test
 
