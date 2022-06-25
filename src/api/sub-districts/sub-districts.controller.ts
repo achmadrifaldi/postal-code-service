@@ -9,8 +9,8 @@ import {
   HttpCode,
 } from '@nestjs/common';
 import { ApiResponse } from '@nestjs/swagger';
-import { BaseResponse } from 'src/common/dto/base-response';
-import { Pagination } from 'src/common/dto/pagination';
+import { BaseResponse } from 'src/helpers/response/base-response';
+import { Pagination } from 'src/helpers/pagination';
 import { SubDistrictsService } from './sub-districts.service';
 import { SearchSubDistrictDto } from './dto';
 

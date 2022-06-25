@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Pagination } from 'src/common/dto/pagination';
+import { Pagination } from 'src/helpers/pagination';
 import { City } from './entities/city.entity';
 import { CityResponseInterface } from './interfaces/city-response.interface';
 import { ImportCityDto } from './dto/import-city.dto';

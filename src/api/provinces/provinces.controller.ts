@@ -1,8 +1,8 @@
 import { Controller, Post, Inject, HttpCode } from '@nestjs/common';
 import { ApiResponse } from '@nestjs/swagger';
 import { ProvincesService } from './provinces.service';
-import { BaseResponse } from 'src/common/dto/base-response';
-import { Pagination } from 'src/common/dto/pagination';
+import { BaseResponse } from 'src/helpers/response/base-response';
+import { Pagination } from 'src/helpers/pagination';
 import { ProvinceResponseInterface } from './interfaces/province-response.interface';
 
 @Controller('provinces')

@@ -21,11 +21,11 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "seed": "ts-node -r tsconfig-paths/register src/db/seed.ts",
+    "seed": "ts-node -r tsconfig-paths/register src/database/seeders/seed.ts",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm",
-    "migration:generate": "npm run typeorm -- -d datasource.ts migration:generate",
-    "migration:run": "npm run typeorm -- -d datasource.ts migration:run",
-    "migration:show": "npm run typeorm -- -d datasource.ts migration:show"
+    "migration:generate": "npm run typeorm -- -d ./src/config/database/postgres/postgres.datasource.ts migration:generate",
+    "migration:run": "npm run typeorm -- -d ./src/config/database/postgres/postgres.datasource.ts migration:run",
+    "migration:show": "npm run typeorm -- -d ./src/config/database/postgres/postgres.datasource.ts migration:show"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",

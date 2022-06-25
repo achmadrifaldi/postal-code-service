@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Pagination } from 'src/common/dto/pagination';
+import { Pagination } from 'src/helpers/pagination';
 import { PostalCode } from './entities/postal-code.entity';
 import { PostalCodeResponseInterface } from './interfaces/postal-code-response.interface';
 import { ImportPostalCodeDto } from './dto/import-postal-code.dto';

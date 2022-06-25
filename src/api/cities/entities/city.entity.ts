@@ -6,7 +6,7 @@ import {
   JoinColumn,
   OneToMany,
 } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
+import { BaseEntity } from 'src/api/shared/entities/base.entity';
 import { Province } from 'src/api/provinces/entities/province.entity';
 import { SubDistrict } from 'src/api/sub-districts/entities/sub-district.entity';
 

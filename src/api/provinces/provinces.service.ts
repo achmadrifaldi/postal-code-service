@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Province } from './entities/province.entity';
-import { Pagination } from 'src/common/dto/pagination';
+import { Pagination } from 'src/helpers/pagination';
 import { ProvinceResponseInterface } from './interfaces/province-response.interface';
 import { ImportProvinceDto } from './dto/import-province.dto';
 

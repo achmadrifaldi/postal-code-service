@@ -5,7 +5,7 @@ import {
   JoinColumn,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
+import { BaseEntity } from 'src/api/shared/entities/base.entity';
 import { Village } from 'src/api/villages/entities/village.entity';
 
 @Entity()

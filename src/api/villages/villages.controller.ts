@@ -8,8 +8,8 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { ApiResponse } from '@nestjs/swagger';
-import { BaseResponse } from 'src/common/dto/base-response';
-import { Pagination } from 'src/common/dto/pagination';
+import { BaseResponse } from 'src/helpers/response/base-response';
+import { Pagination } from 'src/helpers/pagination';
 import { SearchVillageDto } from './dto';
 import { VillagesService } from './villages.service';
 import { VillageResponseInterface } from './interfaces/village-response.interface';

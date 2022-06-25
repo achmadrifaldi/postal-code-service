@@ -6,7 +6,7 @@ import {
   JoinColumn,
   OneToMany,
 } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
+import { BaseEntity } from 'src/api/shared/entities/base.entity';
 import { SubDistrict } from 'src/api/sub-districts/entities/sub-district.entity';
 import { PostalCode } from 'src/api/postal-code/entities/postal-code.entity';
 

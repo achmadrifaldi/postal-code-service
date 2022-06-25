@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Pagination } from 'src/common/dto/pagination';
+import { Pagination } from 'src/helpers/pagination';
 import { SubDistrict } from './entities/sub-district.entity';
 import { SubDistrictResponseInterface } from './interfaces/sub-district-response.interface';
 import { ImportSubDistrictDto } from './dto/import-sub-district.dto';

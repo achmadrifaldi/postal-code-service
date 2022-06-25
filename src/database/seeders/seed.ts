@@ -1,11 +1,11 @@
 import { NestFactory } from '@nestjs/core';
-import { SeederModule } from './seeder/seeder.module';
-import { SeederService } from './seeder/seeder.service';
+import { SampleDataModule } from './sample-data/sample-data.module';
+import { SampleDataService } from './sample-data/sample-data.service';
 
 async function bootstrap() {
-  NestFactory.createApplicationContext(SeederModule)
+  NestFactory.createApplicationContext(SampleDataModule)
     .then(async (appContext) => {
-      const seeder = appContext.get(SeederService);
+      const seeder = appContext.get(SampleDataService);
 
       await seeder.extractProvince();
       await seeder.extractCity();
