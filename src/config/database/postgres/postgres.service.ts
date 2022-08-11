@@ -9,8 +9,11 @@ import { PgConfig } from './postgres.config';
 @Injectable()
 export class PostgresService implements TypeOrmOptionsFactory {
   public createTypeOrmOptions(): TypeOrmModuleOptions {
-    const config: TypeOrmModuleOptions = { ...PgConfig, type: 'postgres' };
+    const config: TypeOrmModuleOptions = {
+      ...PgConfig,
+      type: 'postgres',
+    };
 
-    return { ...config, logger: 'file', synchronize: false };
+    return { ...config, synchronize: true };
   }
 }
